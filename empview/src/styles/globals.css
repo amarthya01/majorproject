@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Work Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+
+  --color-accent-primary: #2563eb;
+  --color-accent-success: #059669;
+  --color-accent-warning: #d97706;
+  --color-accent-danger: #dc2626;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-gray-200);
+  }
+
+  body {
+    @apply font-sans text-black bg-white antialiased;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-bold text-black leading-tight;
+  }
+}
+
+/* Define dark variant clearly for class-based mode */
+@variant dark (&:where(.dark, .dark *));
